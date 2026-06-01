@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plan de Estudios 2026 · Ingeniería Electrónica UNPSJB</title>
+  <meta name="description" content="Mapa interactivo del nuevo Plan de Estudios de Ingeniería Electrónica UNPSJB para ingresantes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="orb orb-a"></div><div class="orb orb-b"></div>
+  <header class="hero">
+    <nav class="nav">
+      <div class="brand"><span class="logo">IE</span><span>Ingeniería Electrónica<br><small>UNPSJB · Comodoro Rivadavia</small></span></div>
+      <a class="pill" href="#mapa">Explorar plan</a>
+    </nav>
+    <section class="hero-grid">
+      <div>
+        <p class="eyebrow">Plan de Estudios 2026</p>
+        <h1>Una forma interactiva de conocer la carrera.</h1>
+        <p class="lead">Tocá cada asignatura para ver sus horas, ubicación en el plan y contenidos mínimos. Ideal para ingresantes, charlas y jornadas de difusión.</p>
+        <div class="actions">
+          <a class="btn primary" href="#mapa">Ver mapa curricular</a>
+          <a class="btn ghost" href="#resumen">Resumen</a>
+        </div>
+      </div>
+      <div class="stats-card" id="resumen">
+        <div><strong>5</strong><span>años</span></div>
+        <div><strong>3800</strong><span>horas de cursado</span></div>
+        <div><strong>200</strong><span>horas de PPS</span></div>
+        <div><strong>2</strong><span>optativas</span></div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="intro-card">
+        <h2>¿Cómo se lee el plan?</h2>
+        <p>Las materias están ordenadas por año y cuatrimestre. Los colores ayudan a distinguir grandes áreas de formación: ciencias básicas, tecnologías básicas, tecnologías aplicadas y complementarias.</p>
+      </div>
+      <div class="legend" id="legend"></div>
+    </section>
+
+    <section id="mapa" class="planner">
+      <div class="section-title">
+        <div>
+          <p class="eyebrow">Mapa curricular</p>
+          <h2>Asignaturas por año y cuatrimestre</h2>
+        </div>
+        <div class="controls">
+          <input id="search" placeholder="Buscar asignatura o contenido..." />
+          <select id="yearFilter"><option value="all">Todos los años</option></select>
+          <select id="blockFilter"><option value="all">Todos los bloques</option></select>
+        </div>
+      </div>
+      <div id="curriculum" class="curriculum"></div>
+    </section>
+
+    <section class="optativas">
+      <div class="section-title compact"><div><p class="eyebrow">Trayecto flexible</p><h2>Asignaturas optativas disponibles</h2></div></div>
+      <div id="optatives" class="optative-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Fuente: propuesta de modificación del Plan de Estudios de Ingeniería Electrónica, Facultad de Ingeniería, UNPSJB, marzo de 2026.</p>
+    <p class="tiny">Sitio estático preparado para despliegue en Vercel.</p>
+  </footer>
+
+  <dialog id="modal" class="modal">
+    <button class="close" aria-label="Cerrar">×</button>
+    <div id="modalContent"></div>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
